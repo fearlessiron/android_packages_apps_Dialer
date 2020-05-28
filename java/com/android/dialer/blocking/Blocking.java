@@ -147,8 +147,13 @@ public final class Blocking {
               List<String> e164Numbers = new ArrayList<>();
 
               for (String number : numbers) {
-                // Initialize as unblocked
-                blockedStatus.put(number, false);
+                // Initialize as unblocked, unless from blacklisted country
+                if (number.startsWith("+43") || number.startsWith("+44")) {
+                  blockedStatus.put(number, true);
+                }
+                else {
+                  blockedStatus.put(number, false);
+                }
                 String e164Number = PhoneNumberUtils.formatNumberToE164(number, countryIso);
                 if (e164Number != null) {
                   e164Numbers.add(e164Number);
