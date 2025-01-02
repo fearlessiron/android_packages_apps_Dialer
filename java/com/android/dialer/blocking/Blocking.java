@@ -153,7 +153,7 @@ public final class Blocking {
 
               for (String number : numbers) {
                 // Initialize as unblocked, unless from blacklisted country
-                if (number.startsWith("+43") || number.startsWith("+44")) {
+                if (number.startsWith("+44")) {
                   blockedStatus.put(number, true);
                 }
                 else {
