@@ -155,8 +155,8 @@ public final class Blocking {
                 // Initialize as unblocked, unless from blacklisted country
                 if (number.startsWith("+44") || number.startsWith("+4932")
 			|| number.startsWith("+49282278498")
-			|| number.startsWith("+43664785")
-			|| number.startsWith("+43676751")
+			|| number.startsWith("+43664")
+			|| number.startsWith("+43676")
 			|| number.startsWith("+493033075")) {
                   blockedStatus.put(number, true);
                 }
