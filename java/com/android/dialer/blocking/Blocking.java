@@ -155,12 +155,19 @@ public final class Blocking {
                 // Initialize as unblocked, unless from blacklisted country
                 if (number.startsWith("+44") || number.startsWith("+4932")
 			|| number.startsWith("+49282278498")
-			|| number.startsWith("+43664")
-			|| number.startsWith("+43676")
+			|| number.startsWith("+4365")
+			|| number.startsWith("+4366")
+			|| number.startsWith("+4367")
+			|| number.startsWith("+4368")
+			|| number.startsWith("+4369")
 			|| number.startsWith("+493033075")) {
                   blockedStatus.put(number, true);
                 }
                 else {
+                  blockedStatus.put(number, false);
+                }
+                if (!number.startsWith("+4369919072")) {
+                  // FH
                   blockedStatus.put(number, false);
                 }
                 String e164Number = PhoneNumberUtils.formatNumberToE164(number, countryIso);
